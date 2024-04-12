@@ -71,3 +71,21 @@ module.exports = {
 @tailwind utilities;
 ```
 
+## 5、代码风格和质量
+
+#### 添加Stylelint
+
+```js
+// 1、安装，vite额外安装这个（vite-plugin-stylelint），其他按需(stylelint stylelint-prettier stylelint-config-prettier stylelint-config-recess-order stylelint-config-standard )stylelint-config-standard-scss
+
+pnpm i stylelint vite-plugin-stylelint  -D
+// 2、config配置
+import stylelint from 'vite-plugin-stylelint';
+stylelint()
+
+// 3、具体规则在.stylelintrc.js中配置
+
+// 4、package.json中添加script
+"lint:style": "stylelint --fix \"src/**/*.{css,scss}\""
+
+```

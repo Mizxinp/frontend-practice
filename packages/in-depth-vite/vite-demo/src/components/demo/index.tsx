@@ -3,7 +3,7 @@ const Demo = () => {
   return (
     <div>
       <div className={styles.name}>css module</div>
-      <div className="bg-red-400">taiwincss</div>
+      <div className="bg-red-400">taiwincsss</div>
     </div>
   )
 }
