@@ -89,3 +89,66 @@ stylelint()
 "lint:style": "stylelint --fix \"src/**/*.{css,scss}\""
 
 ```
+
+## 6、静态资源
+
+#### svg
+
+```js
+// 1、安装
+pnpm i -D vite-plugin-svgr
+
+// 2、配置        
+import svgr from 'vite-plugin-svgr';
+
+export default {
+  plugins: [
+    svgr(),
+  ],  
+}
+
+// 3、使用
+import ReactLogo from '@assets/react.svg?react';
+```
+
+#### 图片压缩
+
+```js  
+// 1、安装
+pnpm i -D vite-plugin-imagemin
+
+// 2、配置
+import imagemin from 'vite-plugin-imagemin';
+
+export default {
+  plugins: [
+    imagemin({
+      gifsicle: {
+        interlaced: false,
+      },
+      optipng: {
+        optimizationLevel: 7,
+      },
+      mozjpeg: {
+        quality: 80,
+      },
+      pngquant: {
+        quality: [0.65, 0.9],
+        speed: 4,
+      },
+      svgo: {
+        plugins: [
+          {
+            name: 'removeViewBox',
+            active: false,
+          },
+          {
+            name: 'removeEmptyAttrs',
+            active: false
+          }
+        ],
+      },
+    }),
+  ],
+}
+```
