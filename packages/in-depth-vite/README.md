@@ -152,3 +152,15 @@ export default {
   ],
 }
 ```
+
+## 9、esbuild插件
+
+基本概念
+- onResolve：在解析导入时触发
+- onLoad：在加载模块时触发
+- onStart：在构建开始时触发
+- onEnd：在构建结束时触发
+
+实战：两个小插件
+- cdn-plugin：替换静态资源链接为cdn链接: 路径：./esbuild/src/cdn-plugin
+- html-plugin：生成html文件: 路径：./esbuild/src/html-plugin
