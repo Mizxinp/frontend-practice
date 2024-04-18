@@ -164,3 +164,15 @@ export default {
 实战：两个小插件
 - cdn-plugin：替换静态资源链接为cdn链接: 路径：./esbuild/src/cdn-plugin
 - html-plugin：生成html文件: 路径：./esbuild/src/html-plugin
+
+## 10、rollup打包基本概念
+rollup目录
+- 多产物
+- 多入口
+- 插件能力
+- api 方式
+  - build
+    - 通过 rollup.rollup方法，传入 inputOptions，生成 bundle 对象；
+    - 调用 bundle 对象的 generate 和 write 方法，传入outputOptions，分别完成产物和生成和磁盘写入。
+    - 调用 bundle 对象的 close 方法来结束打包。
+  - watch
